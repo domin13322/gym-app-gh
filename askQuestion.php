@@ -8,7 +8,7 @@
     $login=$_SESSION['login'];
     $question=$_POST['questionText'];
     $title=$_POST['questionTitle'];
-    if($result=$connect->query("INSERT INTO forum VALUES(NULL,'$question','$login','$title',now())")
+    if($result=$connect->query("INSERT INTO forum VALUES(NULL,'$question','$login','$title',now(),0,0)")
     ){
         $connect->close();
         header("Location:yourQuestions.php");

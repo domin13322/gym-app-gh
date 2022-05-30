@@ -12,7 +12,7 @@ if($connect->connect_errno!=0){
 <html lang="pl" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Track your progress(forum)</title>
+    <title>Track Your progress(forum)</title>
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>" type="text/css"> 
     <link rel="stylesheet" href="img/fontello/css/fontello.css?v=<?php echo time(); ?>" type="text/css" />
     <link rel="stylesheet" href="img/fontello2/css/fontello.css?v=<?php echo time(); ?>" type="text/css" />

@@ -16,13 +16,13 @@ if($connect->connect_errno!=0){
 <html lang="pl" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Measure your progress</title>
+    <title>Track Your progress</title>
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>" type="text/css"> 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body background="img/pexels-victor-freitas-685530.jpg">
 <div id="mainContainer">
-<div id="logo">Zmierz swój progress</div>
+<div id="logo">Track Your progress</div>
 <?php require_once "menu.php";
     
     $login=$_SESSION['login'];

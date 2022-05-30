@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $password="";
-$dbName="training_app";
+$dbName="trainingapp";
 $table="users";
 $table2="practice";
 ?>

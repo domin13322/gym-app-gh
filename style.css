@@ -66,6 +66,21 @@ ul>li a{
     overflow: hidden;
 
 }
+.indexPhoto{
+    width:60%;
+    height:40%;
+}
+.indexh2{
+    color:rgb(207, 11, 11);
+}
+.indexParagraph{
+    font-size:20px;
+    color:rgb(0, 0, 0);
+    font-weight: 600;
+}
+.main{
+    margin-left:10%;
+}
 .subItem{
     background-color:rgb(78, 74, 74);
     color:white;

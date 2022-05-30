@@ -14,9 +14,8 @@ else {
     $login=$_POST['login'];
     
     $password=$_POST['password'];
-    
+
     $login=htmlentities($login,ENT_QUOTES,"UTF-8"); //zamienia kod sql na encje i kod html
-    
     
     if ($result=@$connect->query(sprintf(
     "SELECT*FROM users WHERE user='%s'",
@@ -27,26 +26,25 @@ else {
         //zapytania. Jeśli więcej niż 0 to lecimy z kodem below
         if($LoginSuccessful>0){
             $record=$result->fetch_assoc(); //tablica-1 rząd konkretny 
-
+           // $_SESSION['noSuchUser']=password_hash($password,PASSWORD_DEFAULT)."     ".$record['pass'];
             if(password_verify($password,$record['pass'])){
+                $_SESSION['isLogged']=true;
+                $_SESSION['id']=$record['userId'];
+                $user=$record['user'];
+                $_SESSION['login']=$login;
+                unset($_SESSION['noSuchUser']);
+                $result->free_result(); //usuwamy niepotrzebne rezultaty,zwalniamy pamięć
+                $connect->close();
+                header("Location:index.php");
+                exit();
+            }
+            else {
+               // $_SESSION['noSuchUser']="Wrong password, please try again";
+            }
 
-            $_SESSION['isLogged']=true;
-            $_SESSION['id']=$record['id'];
-            $user=$record['user'];
-            $_SESSION['login']=$login;
-            unset($_SESSION['noSuchUser']);
-            $result->free_result(); //usuwamy niepotrzebne rezultaty,zwalniamy pamięć
-            $connect->close();
-            header("Location:index.php");
-            exit();
         }
         else {
-            $_SESSION['noSuchUser']="wrong password,try again\n";
-        }
-
-        }
-        else {
-            $_SESSION['noSuchUser']="wrong login,try again\n";
+            $_SESSION['noSuchUser']="wrong login, please try again\n";
         }
     }
     header("Location:signIn.php");
